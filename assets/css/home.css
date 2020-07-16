@@ -1,0 +1,104 @@
+body{
+    margin: 0;
+    background-color: lightblue;
+    font-family: sans-serif;
+}
+                 /* table*/
+table{
+    width: 55%;
+    margin: auto;
+    background-color: white;
+    margin-top: 10px;
+}       
+table tr{
+    height: 50px;
+    margin-top: 15px;
+}   
+                              /*Table Heading */
+thead tr {
+    color: darkgray;
+    font-size: x-large;
+    font-family: initial;
+}
+                             /*Table Heading */
+#description,#category-select,#date {
+    border: none;
+    width: 100%;
+    margin: 10px 0px;
+    opacity: 0.5;
+    outline: none;
+}       
+                                       /* Table footer row */
+tfoot tr {
+    height: 80px;
+    text-align: center;
+}
+
+                                        /* category button design */
+button#category {
+    float: right;
+    width: 100px;
+    height: 30px;
+    margin: 6px;
+    border: none;
+    background-color: midnightblue;
+    color: mistyrose;
+    font-size: large;
+    opacity: 0.7;
+}
+
+
+
+                                      /* input checkbox */
+
+input[type="checkbox"]:checked ~span{
+
+     text-decoration: line-through;
+     color: lightslategrey;
+     
+}                                      
+
+
+
+                                   /* Style add button */
+
+ #add-task,#remove-task {
+    height: 35px;
+    color: white;
+    font-weight: bolder;
+    border: none;
+    opacity: 0.8;
+    font-size: medium;
+    width: 40%; 
+    margin-left: 90px;
+}           
+#add-task{
+    background-color: black;  
+}   
+#remove-task{
+    background-color: red;
+}                  
+
+
+table#list-item tr{
+    height: 60px;
+}
+table#list-item div{
+    margin: 5px;
+}
+table#list-item tr div button {
+    float: right;
+    height: 35px;
+    width: 100px;
+    background-color: slategray;
+    color: white;
+    font-size: larger;
+}
+
+/* media query */
+@media screen and (min-width: 400px) {
+   table{
+       width: 85%;
+       height: 50%;
+   }
+}

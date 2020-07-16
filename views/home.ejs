@@ -1,0 +1,102 @@
+<html>
+    <head>
+        <title>
+            <%= title %>
+        </title>
+
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+            integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
+        <link rel="stylesheet" href="/css/home.css">
+    </head>
+    <body> 
+                             <!-- Create Form and table -->
+        
+        <table border="1" >
+        <form action="/add-list" method="POST">
+                                    <!--Table Header start-->
+            <thead>
+            <th colspan="2"> ToDo App </th>
+            </thead>
+                                    <!--Table Header end-->
+                                    <!--Table Body Start-->
+            <tbody>
+            <tr>
+                <td colspan="2">
+                    <span>DESCRIPTION</span><br>
+                    <input type="text" name="description" placeholder="What do you need to do?" id="description" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="category-select">Category:</label><br>
+                    <select name="category" id="category-select" required>
+                        <option value="">Choose a category</option>
+                        <option value="Personal">Personal</option>
+                        <option value="Work">Work</option>
+                        <option value="School">School</option>
+                        <option value="Cleaning">Cleaning</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </td>
+                <td>
+                    <span>DUE DATE:</span><br>
+                    <input type="date" name="date" placeholder="dd/mm/yyyy" id="date"required>
+                </td>
+            </tr>
+            
+             <tr>
+                   <td>
+                    <button type="submit" id="add-task">
+                        <i class="fas fa-plus"></i>
+                        <span>Add Task</span>
+                    </button>
+                </td>
+             </form>
+                    <td>
+                         
+                        <button id="remove-task">
+                        <i class="fas fa-trash-alt"></i>      
+                        <span>Delete task</span>
+                        </button>
+
+                        
+                    </td>
+             </tr>
+            
+             
+            
+            
+            
+        
+                                      <!--Adding and removing data from the -->
+
+            
+            <% for(let i of locals.todo_list) { %>
+                <tr>
+                <td colspan="2">
+                <div>
+                <input type="checkbox" value="<%= i._id %>" class="myCheckbox" id="myInput">
+                <span> <%= i.description %> </span>
+                <span style="display: block;"><%= i.date %></span>
+                <button id="category"> <%= i.category %> </button>
+                </div>
+                </td>
+                </tr>
+                
+            <% } %>
+        </tbody>
+                                    <!-- Table body end-->
+        </table>
+        
+            
+
+          
+        
+
+
+
+     <script type="text/javascript" src="/js/home.js"></script>
+
+    </body>
+</html>
